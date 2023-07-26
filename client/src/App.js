@@ -1,10 +1,11 @@
 import './App.css';
+//Importamos los componentes.
+import CompShowTrabajadores from './trabajadores/ShowTrabajadores';
 
 function App() {
   return (
     <div className="App">
-          Learn React
-      <button className="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
+      <CompShowTrabajadores/>
     </div>
   );
 }

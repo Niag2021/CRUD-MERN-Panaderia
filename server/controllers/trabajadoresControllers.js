@@ -18,7 +18,7 @@ export const getTrabajador = async (req, res) => {
         const trabajador = await trabajadoresModel.findAll({
             where: { id:req.params.id }
         })
-        res.json(trabajador)
+        res.json([0])
     } catch (error){
         res.json( {message: error.message})
     }
@@ -53,8 +53,8 @@ export const updateTrabajador = async(req, res) => {
 //Eliminar un registro. 
 export const deleteTrabajador = async(req, res) => {
     try {
-        await trabajadoresModel.destroy(req.body, {
-            where: {id:req.params.id}
+        await trabajadoresModel.destroy({
+            where: {id:req.params.id}  
         })
         res.json({
             "message": "Registro eliminado correctamente."

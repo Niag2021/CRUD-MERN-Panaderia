@@ -31,6 +31,7 @@ const CompShowTrabajadores = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col'>
+                    <Link to="/create" className='btn btn-primary mt-2 mb-2'><i class="fa-solid fa-plus"></i></Link>
                     <table className='table'>
                         <thead className='table-primary'>
                             <tr>
@@ -50,7 +51,8 @@ const CompShowTrabajadores = () => {
                                     <td>{trabajador.apellidoMaterno}</td>
                                     <td>{trabajador.edad}</td>
                                     <td>
-                                        <button onClick={()=>deleteTrabajador(trabajador.id)} className='btn btn-danger'>Delete</button>
+                                        <Link to={`/edit/${trabajador.id}`} className="btn btn-info"><i class="fa-solid fa-pencil"></i></Link>
+                                        <button onClick={()=>deleteTrabajador(trabajador.id)} className='btn btn-danger'><i class="fa-solid fa-trash-can"></i></button>
                                     </td>
                                 </tr>
                             ))}

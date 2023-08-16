@@ -1,5 +1,5 @@
 //Importamos el modelo
-import TrabajadoresModel from '../models/TrabajadoresModel.js'; 
+import TrabajadoresModel from "../models/TrabajadoresModel.js"; 
 
 //** Metodos para el CRUD**/
 

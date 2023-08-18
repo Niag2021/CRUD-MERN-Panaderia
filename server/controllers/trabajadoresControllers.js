@@ -36,14 +36,16 @@ export const createTrabajador = async (req, res) => {
 }
 
 //Actualizar un registro. 
-export const updateTrabajador = async (req, res) => {
+export const updateTrabajador = async(req, res) => {
     try {
-        await TrabajadoresModel(req.body, {
-            where: {id: req.params.id}
+        await TrabajadoresModel.update(req.body, {
+            where: {id:req.params.id}
         })
-        res.json({"message": "Registro actualizado correctamente."})
-    }catch (error){
-        res.json({message: error.message})        
+        res.json({
+            "message": "Registro actualizado correctamente."
+        })
+    } catch (error){
+        res.json( {message: error.message})
     }
 }
 

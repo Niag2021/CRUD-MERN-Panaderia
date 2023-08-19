@@ -35,6 +35,7 @@ const CompShowTrabajadores = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col'>
+                    <Link to="/create" className='btn btn-primary mt-2 mb-2'>Crear</Link>                    
                     <table class='table'>
                         <thead className='table-primary'>
                             <tr>
@@ -43,17 +44,19 @@ const CompShowTrabajadores = () => {
                                 <th>Apellido Paterno.</th>
                                 <th>Apellido Materno.</th>
                                 <th>Edad.</th>
+                                <th>Acciones.</th>
                             </tr>
                         </thead>
                         <tbody>
                             { trabajadores.map ( (trabajador) => (
                                 <tr key={ trabajador.id}>
+                                    <td>{trabajador.id}</td>
                                     <td>{trabajador.nombre}</td>
                                     <td>{trabajador.apellidoPaterno}</td>
                                     <td>{trabajador.apellidoMaterno}</td>
                                     <td>{trabajador.edad}</td>
                                     <td>
-                                        {/*<Link to={`/edit/${trabajador.id}`} className="btn btn-info">Editar</Link>*/}
+                                        <Link to={`/edit/${trabajador.id}`} className="btn btn-info">Updated</Link>
                                         <button onClick={()=>deleteTrabajador(trabajador.id)} className='btn btn-danger'>Delete</button>
                                     </td>
                                 </tr>
